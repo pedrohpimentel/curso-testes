@@ -3,7 +3,7 @@ package com.br.automated_tests_course.math;
 public class SimpleMath {
 
     public Double sum(Double firstNumber, Double secondNumber) {
-        return firstNumber - secondNumber; // Trocando o sinal para forçar o erro.
+        return firstNumber + secondNumber;
     }
 
     public Double subtraction(Double firstNumber, Double secondNumber) {
