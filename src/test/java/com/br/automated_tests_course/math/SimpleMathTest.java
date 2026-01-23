@@ -13,18 +13,22 @@ public class SimpleMathTest {
     @Test
     @DisplayName("Test 6.2 + 2.0 = 8.2") // Adicione o nome que você irá atribuir ao método.
     void testSum_When_SixDotTwoIsAddedByTwo_ShouldReturnEightDotTwo(){
+
+        // AAA Arrange, Act e Assert
+
+        //Given, Arrange -> Variáveis que serão utilizadas no teste.
         SimpleMath math = new SimpleMath();
-        //Adicionando os números em variáveis para parametrizar a msg.
         double firstNumber = 6.2D;
         double secondNumber = 2D;
-        Double actual = math.sum(firstNumber,secondNumber);
         double expected = 8.2D;
 
-        /*
-        * Adicionarei uma lambda function para que o comando só seja executado quando realmente houver erro.
-        * Buscando otimizar a performance do código.*/
+        //When, Act -> Método que será testado.
+        Double actual = math.sum(firstNumber,secondNumber);
+
+        //Then, Assert -> Onde valida o retorno e verifica se o comportamento é o mesmo do esperado método testado.
         assertEquals(expected,actual,
                 () -> firstNumber + " + " + secondNumber + " did not produce " + expected + "!");
+
     }
 
     @Test
