@@ -5,8 +5,9 @@ import org.junit.jupiter.api.Test;
 
 public class SimpleMathTest {
 
+    //Padrão para seguir -> test[System Under Test]_[Condition or State Change]_[Expected Result]
     @Test
-    void testSum(){
+    void testSum_When_SixDotTwoIsAddedByTwo_ShouldReturnEightDotTwo(){
         SimpleMath math = new SimpleMath();
         //Adicionando os números em variáveis para parametrizar a msg.
         double firstNumber = 6.2D;
@@ -57,6 +58,13 @@ public class SimpleMathTest {
                 () -> firstNumber + " / " + secondNumber + " did not produce " + expected + "!");
     }
 
+    //Padrão para seguir -> test[System Under Test]_[Condition or State Change]_[Expected Result]
+    @Test
+    void testDivision_When_FirstNumberDividedByZero_ShouldThrowArithmeticException(){
+        SimpleMath math = new SimpleMath();
+        fail();
+    }
+
     @Test
     void testMean(){
         SimpleMath math = new SimpleMath();
@@ -66,18 +74,17 @@ public class SimpleMathTest {
         double expected = 10D;
 
         assertEquals(expected, actual,
-                () -> "("+firstNumber + " + " + secondNumber +")" + "/2"+ " did not produce " + expected + "!");
+                () -> "("+firstNumber + " + " + secondNumber +")/2"+ " did not produce " + expected + "!");
     }
 
     @Test
     void testSqrt(){
         SimpleMath math = new SimpleMath();
         double number = 144D;
-        Double actual = math.squareRoot(number);
         double expected = 12D;
+        Double actual = math.squareRoot(number);
 
         assertEquals(expected, actual,
-                () -> number + " did not produce " + expected + "!");
+                () -> "Square Root of " + number + " did not produce " + expected + "!");
     }
-
 }
