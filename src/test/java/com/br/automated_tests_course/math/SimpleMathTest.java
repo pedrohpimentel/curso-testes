@@ -2,23 +2,49 @@ package com.br.automated_tests_course.math;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 // Adicione o nome que você irá atribuir a classe.
 @DisplayName("Test Math Operations in SimpleMath Class ")
 public class SimpleMathTest {
+
+    SimpleMath math; // Colocamos o método math para fora e instanciamos ele dentro do beforeEach.
+                    // Apagando todos os locais na onde instanciamos o "new SimpleMath""
+    @BeforeAll
+    static void setup(){ // O método @BeforeAll necessita ser static e void.
+                        // Aqui você irá definir algo que será executado ANTES de todos os test.
+        System.out.println("Running Before All Method");
+    }
+
+    @AfterAll
+    static void cleanup(){ // O método @AfterAll necessita ser static e void.
+        // Você limpará o DB, desfaz tudo o que foi feito nos tests.
+        System.out.println("Running After All Method");
+    }
+
+    @BeforeEach
+    void beforeEachMethod(){ // O método @BeforeEach necessita ser só void.
+                            // Utilizado para verificar algo antes do test.
+        math = new SimpleMath();
+        System.out.println("Running Before Each Method");
+    }
+
+    @AfterEach
+    void afterEachMethod(){ // O método @AfterEach necessita ser só void.
+                            // Utilizado para verificar algo depois do test.
+        System.out.println("Running After Each Method");
+    }
 
     //Padrão para seguir -> test[System Under Test]_[Condition or State Change]_[Expected Result]
     @Test
     @DisplayName("Test 6.2 + 2.0 = 8.2") // Adicione o nome que você irá atribuir ao método.
     void testSum_When_SixDotTwoIsAddedByTwo_ShouldReturnEightDotTwo(){
 
-        // AAA Arrange, Act e Assert
+        System.out.println("Test 6.2 + 2.0 = 8.2");
 
+        // AAA Arrange, Act e Assert
         //Given, Arrange -> Variáveis que serão utilizadas no teste.
-        SimpleMath math = new SimpleMath();
+
         double firstNumber = 6.2D;
         double secondNumber = 2D;
         double expected = 8.2D;
@@ -35,7 +61,8 @@ public class SimpleMathTest {
     @Test
     @DisplayName("Test 8.0 - 6.0 = 2.0")
     void testSubtraction(){
-        SimpleMath math = new SimpleMath();
+        System.out.println("Test 8.0 = 6.0");
+
         double firstNumber = 8D;
         double secondNumber = 6D;
         Double actual = math.subtraction(firstNumber,secondNumber);
@@ -48,7 +75,8 @@ public class SimpleMathTest {
     @Test
     @DisplayName("Test 8.0 * 10.0 = 80.0")
     void testMultiplication(){
-        SimpleMath math = new SimpleMath();
+        System.out.println("Test 8.0 = 10.0");
+
         double firstNumber = 8D;
         double secondNumber = 10D;
         Double actual = math.multiplication(firstNumber,secondNumber);
@@ -61,7 +89,8 @@ public class SimpleMathTest {
     @Test
     @DisplayName("Test 100.0 / 10.0 = 10.0")
     void testDivision(){
-        SimpleMath math = new SimpleMath();
+        System.out.println("Test 100.0 / 10.0");
+
         double firstNumber = 100D;
         double secondNumber = 10D;
         Double actual = math.division(firstNumber,secondNumber);
@@ -71,19 +100,18 @@ public class SimpleMathTest {
                 () -> firstNumber + " / " + secondNumber + " did not produce " + expected + "!");
     }
 
-    //Padrão para seguir -> test[System Under Test]_[Condition or State Change]_[Expected Result]
-    @Disabled("TODO: We need still work on it!") // Anotação para desabilitar o test.
+    @Disabled ("TODO: We need still work on it")
     @Test
     @DisplayName("Test Division By Zero")
     void testDivision_When_FirstNumberDividedByZero_ShouldThrowArithmeticException(){
-        SimpleMath math = new SimpleMath();
+        System.out.println("Test Division By Zero");
         fail();
     }
 
     @Test
     @DisplayName("Test (10 + 10)/2 = 10")
     void testMean(){
-        SimpleMath math = new SimpleMath();
+        System.out.println("Test (10 + 10)/2 = 10");
         double firstNumber = 10D;
         double secondNumber = 10D;
         Double actual = math.mean(firstNumber,secondNumber);
@@ -96,7 +124,7 @@ public class SimpleMathTest {
     @Test
     @DisplayName("Test Square Root of 144 = 12")
     void testSqrt(){
-        SimpleMath math = new SimpleMath();
+        System.out.println("Test Square Root of 144");
         double number = 144D;
         double expected = 12D;
         Double actual = math.squareRoot(number);
@@ -104,5 +132,4 @@ public class SimpleMathTest {
         assertEquals(expected, actual,
                 () -> "Square Root of " + number + " did not produce " + expected + "!");
     }
-
 }
