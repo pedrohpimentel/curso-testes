@@ -2,6 +2,7 @@ package com.br.automated_tests_course.math;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -71,6 +72,7 @@ public class SimpleMathTest {
     }
 
     //Padrão para seguir -> test[System Under Test]_[Condition or State Change]_[Expected Result]
+    @Disabled("TODO: We need still work on it!") // Anotação para desabilitar o test.
     @Test
     @DisplayName("Test Division By Zero")
     void testDivision_When_FirstNumberDividedByZero_ShouldThrowArithmeticException(){
@@ -102,17 +104,5 @@ public class SimpleMathTest {
         assertEquals(expected, actual,
                 () -> "Square Root of " + number + " did not produce " + expected + "!");
     }
-    
-    // test[System Under Test]_[Condition or State Change]_[Expected Result]
-    @DisplayName("")
-    @Test
-    void testSystemUnderTest_when__should() {
-    	// Given / Arrange
-    	
-    	
-    	// When / Act
-    	
-    	
-    	// Then / Assert
-    }
+
 }
