@@ -102,4 +102,17 @@ public class SimpleMathTest {
         assertEquals(expected, actual,
                 () -> "Square Root of " + number + " did not produce " + expected + "!");
     }
+    
+    // test[System Under Test]_[Condition or State Change]_[Expected Result]
+    @DisplayName("")
+    @Test
+    void testSystemUnderTest_when__should() {
+    	// Given / Arrange
+    	
+    	
+    	// When / Act
+    	
+    	
+    	// Then / Assert
+    }
 }
