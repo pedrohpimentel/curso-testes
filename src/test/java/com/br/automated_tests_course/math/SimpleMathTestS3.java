@@ -6,7 +6,7 @@ import org.junit.jupiter.api.*;
 
 // Adicione o nome que você irá atribuir a classe.
 @DisplayName("Test Math Operations in SimpleMath Class ")
-public class SimpleMathTest {
+public class SimpleMathTestS3 {
 
     SimpleMath math; // Colocamos o método math para fora e instanciamos ele dentro do beforeEach.
                     // Apagando todos os locais na onde instanciamos o "new SimpleMath""
