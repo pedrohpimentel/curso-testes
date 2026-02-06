@@ -1,9 +1,11 @@
 package com.br.automated_tests_course.nomath;
 
 import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
+@Order(1)
 @TestMethodOrder(MethodOrderer.Random.class) // Irá ordenar os tests de forma randômica.
 public class MethodOrderedRandonlyTest {
 

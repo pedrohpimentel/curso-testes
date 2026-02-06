@@ -1,9 +1,11 @@
 package com.br.automated_tests_course.nomath;
 
 import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
+@Order(2)
 @TestMethodOrder(MethodOrderer.MethodName.class) // Irá executar de na ordem de acordo com o nome.
 public class MethodOrderedByNameTest {
 
