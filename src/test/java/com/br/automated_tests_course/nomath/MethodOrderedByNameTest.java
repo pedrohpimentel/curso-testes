@@ -4,13 +4,9 @@ import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
-@TestMethodOrder(MethodOrderer.Random.class) // Irá ordenar os tests de forma randômica.
-public class MethodOrderedRandonlyTest {
+@TestMethodOrder(MethodOrderer.MethodName.class) // Irá executar de na ordem de acordo com o nome.
+public class MethodOrderedByNameTest {
 
-    @Test
-    void testA(){
-        System.out.println("Running test A: ");
-    }
     @Test
     void testB(){
         System.out.println("Running test B: ");
@@ -19,4 +15,9 @@ public class MethodOrderedRandonlyTest {
     void testC(){
         System.out.println("Running test C: ");
     }
+    @Test
+    void testA(){
+        System.out.println("Running test A: ");
+    }
+
 }
